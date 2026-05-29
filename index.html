@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --purple: #8065f0;
       --purple-dark: #5a45c0;
@@ -17,379 +16,54 @@
       --text: #2d2040;
       --muted: #7a6e90;
     }
-
-    html, body {
-      height: 100%;
-      font-family: 'Source Sans 3', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* ── TOP BANNER ── */
-    .banner {
-      background: var(--purple);
-      color: #fff;
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 40px;
-      background: #fff;
-      border-bottom: 1px solid #ede9f8;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      height: 48px;
-      width: auto;
-    }
-
-    .nav-logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.3;
-      max-width: 200px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
+    html, body { height: 100%; font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    .banner { background: var(--purple); color: #fff; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; background: #fff; border-bottom: 1px solid #ede9f8; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--dark); line-height: 1.3; max-width: 200px; }
+    .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--purple); }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      background: linear-gradient(135deg, #1a1030 0%, #3d2a7a 60%, #8065f0 100%);
-      color: #fff;
-      padding: 70px 40px 80px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(128,101,240,0.4) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 999px;
-      padding: 6px 18px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      backdrop-filter: blur(4px);
-    }
-
-    .hero img.hero-logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 24px;
-      filter: drop-shadow(0 4px 24px rgba(128,101,240,0.5));
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 52px);
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    }
-
-    .hero p {
-      font-size: clamp(15px, 2vw, 19px);
-      font-weight: 300;
-      max-width: 620px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-      opacity: 0.9;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      background: #fff;
-      color: var(--purple-dark);
-      font-family: 'Source Sans 3', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 40px;
-      border-radius: 999px;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .hero-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-
-    .hero-sub-cta {
-      display: inline-block;
-      margin-left: 16px;
-      color: rgba(255,255,255,0.85);
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      cursor: pointer;
-    }
-
-    /* ── STAT BAND ── */
-    .stat-band {
-      background: var(--dark);
-      color: #fff;
-      padding: 36px 40px;
-      text-align: center;
-    }
-
-    .stat-band p {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(16px, 2.5vw, 22px);
-      font-weight: 700;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
-    .stat-band span {
-      color: var(--purple-light);
-    }
-
-    /* ── MISSION SECTION ── */
-    .mission {
-      padding: 64px 40px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--purple);
-      margin-bottom: 16px;
-    }
-
-    .mission h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 4vw, 38px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-
-    .mission p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    /* ── QUOTE ── */
-    .quote-section {
-      background: linear-gradient(135deg, #f0ecff 0%, #faf8ff 100%);
-      padding: 56px 40px;
-      text-align: center;
-      border-top: 1px solid #ede9f8;
-      border-bottom: 1px solid #ede9f8;
-    }
-
-    .quote-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      color: var(--purple-light);
-      line-height: 0.5;
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    blockquote {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(18px, 3vw, 26px);
-      font-style: italic;
-      color: var(--dark);
-      max-width: 680px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
-    }
-
-    cite {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── NAV CARDS ── */
-    .nav-cards {
-      padding: 64px 40px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .nav-cards h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 36px;
-      color: var(--dark);
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #ede9f8;
-      border-radius: 16px;
-      padding: 28px 20px;
-      text-align: center;
-      text-decoration: none;
-      color: var(--text);
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(128,101,240,0.12);
-      border-color: var(--purple-light);
-    }
-
-    .card-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .card-title {
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.03em;
-      color: var(--dark);
-    }
-
-    /* ── CTA FOOTER ── */
-    .cta-footer {
-      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
-      color: #fff;
-      text-align: center;
-      padding: 56px 40px;
-    }
-
-    .cta-footer h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 4vw, 36px);
-      margin-bottom: 16px;
-    }
-
-    .cta-footer p {
-      font-size: 16px;
-      opacity: 0.85;
-      max-width: 500px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: #fff;
-      color: var(--purple-dark);
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 44px;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-      margin: 6px;
-    }
-
+    .hero { position: relative; background: linear-gradient(135deg, #1a1030 0%, #3d2a7a 60%, #8065f0 100%); color: #fff; padding: 70px 40px 80px; text-align: center; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(128,101,240,0.4) 0%, transparent 60%); pointer-events: none; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 6px 18px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; backdrop-filter: blur(4px); }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 52px); font-weight: 900; line-height: 1.15; margin-bottom: 20px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+    .hero p { font-size: clamp(15px, 2vw, 19px); font-weight: 300; max-width: 620px; margin: 0 auto 36px; line-height: 1.7; opacity: 0.9; }
+    .hero-cta { display: inline-block; background: #fff; color: var(--purple-dark); font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 16px; padding: 16px 40px; border-radius: 999px; text-decoration: none; letter-spacing: 0.03em; box-shadow: 0 8px 32px rgba(0,0,0,0.25); transition: transform 0.2s, box-shadow 0.2s; }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .hero-sub-cta { display: inline-block; margin-left: 16px; color: rgba(255,255,255,0.85); font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+    .stat-band { background: var(--dark); color: #fff; padding: 36px 40px; text-align: center; }
+    .stat-band p { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2.5vw, 22px); font-weight: 700; max-width: 700px; margin: 0 auto; line-height: 1.5; }
+    .stat-band span { color: var(--purple-light); }
+    .mission { padding: 64px 40px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple); margin-bottom: 16px; }
+    .mission h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 38px); font-weight: 700; line-height: 1.25; margin-bottom: 20px; color: var(--dark); }
+    .mission p { font-size: 17px; line-height: 1.8; color: var(--muted); max-width: 680px; margin: 0 auto; }
+    .quote-section { background: linear-gradient(135deg, #f0ecff 0%, #faf8ff 100%); padding: 56px 40px; text-align: center; border-top: 1px solid #ede9f8; border-bottom: 1px solid #ede9f8; }
+    .quote-mark { font-family: 'Playfair Display', serif; font-size: 80px; color: var(--purple-light); line-height: 0.5; margin-bottom: 20px; display: block; }
+    blockquote { font-family: 'Playfair Display', serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--dark); max-width: 680px; margin: 0 auto 20px; line-height: 1.6; }
+    cite { font-size: 14px; font-style: normal; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; }
+    .nav-cards { padding: 64px 40px; max-width: 960px; margin: 0 auto; }
+    .nav-cards h2 { font-family: 'Playfair Display', serif; font-size: 28px; text-align: center; margin-bottom: 36px; color: var(--dark); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .card { background: #fff; border: 1px solid #ede9f8; border-radius: 16px; padding: 28px 20px; text-align: center; text-decoration: none; color: var(--text); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(128,101,240,0.12); border-color: var(--purple-light); }
+    .card-icon { font-size: 28px; margin-bottom: 12px; }
+    .card-title { font-weight: 700; font-size: 14px; letter-spacing: 0.03em; color: var(--dark); }
+    .cta-footer { background: linear-gradient(135deg, var(--purple-dark), var(--purple)); color: #fff; text-align: center; padding: 56px 40px; }
+    .cta-footer h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px; }
+    .cta-footer p { font-size: 16px; opacity: 0.85; max-width: 500px; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: #fff; color: var(--purple-dark); font-weight: 700; font-size: 16px; padding: 16px 44px; border-radius: 999px; text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.2); transition: transform 0.2s; margin: 6px; }
     .cta-btn:hover { transform: translateY(-2px); }
-
-    .cta-btn.outline {
-      background: transparent;
-      color: #fff;
-      border: 2px solid rgba(255,255,255,0.6);
-      box-shadow: none;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 24px 40px;
-      font-size: 13px;
-    }
-
-    footer a {
-      color: var(--purple-light);
-      text-decoration: none;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
+    .cta-btn.outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); box-shadow: none; }
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 24px 40px; font-size: 13px; }
+    footer a { color: var(--purple-light); text-decoration: none; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .hero > * { animation: fadeUp 0.7s ease both; }
-    .hero .hero-badge    { animation-delay: 0.1s; }
-    .hero img.hero-logo  { animation-delay: 0.2s; }
-    .hero h1             { animation-delay: 0.3s; }
-    .hero p              { animation-delay: 0.4s; }
-    .hero .hero-btns     { animation-delay: 0.5s; }
+    .hero .hero-badge { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.3s; }
+    .hero p { animation-delay: 0.4s; }
+    .hero .hero-btns { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
@@ -398,7 +72,6 @@
 
   <nav>
     <a class="nav-logo" href="https://virginiafentanylandsubstanceawareness.org" target="_blank" rel="noopener">
-      <img src="https://img1.wsimg.com/isteam/ip/76e3123e-1a03-43df-9111-feda6d56c960/Screenshot%202025-04-25%20at%2010.48.50%E2%80%AFPM.png" alt="VFSA Logo" onerror="this.style.display='none'" />
       <span class="nav-logo-text">Virginia Fentanyl &amp; Substance Awareness</span>
     </a>
     <div class="nav-links">
@@ -412,10 +85,6 @@
 
   <section class="hero">
     <div class="hero-badge">Virginia · Est. 2020</div>
-    <img class="hero-logo"
-      src="https://img1.wsimg.com/isteam/ip/76e3123e-1a03-43df-9111-feda6d56c960/Screenshot%202025-04-25%20at%2010.48.50%E2%80%AFPM.png"
-      alt="VFSA"
-      onerror="this.style.display='none'" />
     <h1>No Parent Should Walk<br>This Journey Alone</h1>
     <p>VFSA offers hope, community, and real resources to families fighting fentanyl and substance use — together.</p>
     <div class="hero-btns">
